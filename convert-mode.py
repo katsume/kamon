@@ -9,6 +9,7 @@ from PIL import Image
 if __name__=='__main__':
 
     parser= argparse.ArgumentParser()
+    parser.add_argument('--mode', type=str, default='RGB', help='See https://pillow.readthedocs.io/en/stable/handbook/concepts.html#concept-modes')
     parser.add_argument('src', type=str)
     parser.add_argument('dst', type=str)
     args= parser.parse_args()
@@ -24,7 +25,7 @@ if __name__=='__main__':
         if not ext in ['.jpg', '.png', '.gif']:
             continue
 
-        img = Image.open(file).convert('L')
+        img = Image.open(file).convert(args.mode)
         img.save(os.path.join(args.dst, name));
 
         print(name);

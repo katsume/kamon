@@ -27,8 +27,8 @@ if __name__=='__main__':
             continue
 
         img = Image.open(file)
-        if img.mode== 'RGBA':
-            img= img.convert('RGB')
+        # if img.mode== 'RGBA':
+        #     img= img.convert('RGB')
         img_resized = img.resize((args.width, args.height), Image.LANCZOS)
         img_resized.save(os.path.join(args.dst, name));
 
