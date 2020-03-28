@@ -1,4 +1,4 @@
-# kamon-generator
+# kamon-dataset-formatter
 
 ## Crop parmeters
 
