@@ -1,4 +1,4 @@
-# kamon-dataset-formatter
+# kamon
 
 ## Crop parmeters
 
