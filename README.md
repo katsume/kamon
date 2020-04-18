@@ -5,7 +5,7 @@
 ### Requirements
 
 - Docker
-- [tkarras/progressive_growing_of_gans: Progressive Growing of GANs for Improved Quality, Stability, and Variation](https://github.com/tkarras/progressive_growing_of_gans)
+- [katsume/progressive_growing_of_gans: Progressive Growing of GANs for Improved Quality, Stability, and Variation](https://github.com/katsume/progressive_growing_of_gans)
 
 ### Tree
 
