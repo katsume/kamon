@@ -1,8 +1,10 @@
 #!/bin/bash
 
 BASE=tensorflow/tensorflow:1.6.0-gpu-py3
-NAME=$(whoami)/${BASE##*/}
-WORK_DIR=tmp
+WORK_DIR=/tmp
+
+DIR=$(cd $(dirname $0) && pwd)
+NAME=$(whoami)/${DIR##*/}
 
 # TF_FORCE_GPU_ALLOW_GROWTH=true
 # https://qiita.com/ysuzuki19/items/b727bbcb45f1cad37630
@@ -20,4 +22,4 @@ docker build -t $NAME -<<- EOF
 	RUN cat /dev/null > /etc/ImageMagick-6/policy.xml
 	WORKDIR $WORK_DIR
 	EOF
-docker run -it --gpus all --rm -u ${UID}:${GID} -v $PWD:/$WORK_DIR -w /$WORK_DIR $NAME "$@"
+docker run -it --gpus all --rm -u ${UID}:${GID} -v $PWD:$WORK_DIR -w $WORK_DIR $NAME "$@"
